@@ -1,0 +1,24 @@
+{
+  "name": "effjay",
+  "version": "1.0.0",
+  "description": "generate json from a file tree",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jpsierens/effjay.git"
+  },
+  "keywords": [
+    "node",
+    "file",
+    "tree"
+  ],
+  "author": "Jean-Pierre Sierens",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jpsierens/effjay/issues"
+  },
+  "homepage": "https://github.com/jpsierens/effjay#readme"
+}
