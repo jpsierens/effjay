@@ -1,15 +1,25 @@
 const fs = require('fs');
 
-const generateJSON = (dir, json) => {
+const generateJSON = (dir, currPath) => {
+	const json = {};
 
 	dir.forEach(subPath => {
-		console.log(subPath);
+		const fullPath = `${currPath}/${subPath}`;
+
+		if (fs.statSync(fullPath).isDirectory()) {
+			const currDir = fs.readdirSync(fullPath);
+
+			return json[subPath] = generateJSON(currDir, fullPath);
+		}
+
+		return json[subPath] = fs.readFileSync(fullPath, 'utf8');
 	});
+
+	return json;
 };
 
 const effjay = (rootDirectory) => {
 	const root = fs.readdirSync(rootDirectory);
-	console.log(root);
 
 	if (!root) {
 		throw 'Error: A root directory is required';
@@ -19,7 +29,7 @@ const effjay = (rootDirectory) => {
 			'you need to pass in a directory path';
 	}
 
-	return generateJSON(root, {});
+	return generateJSON(root, rootDirectory);
 }
 
-effjay('test');
+console.log(effjay('test'));
