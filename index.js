@@ -18,7 +18,16 @@ const generateJSON = (dir, currPath) => {
 	return json;
 };
 
-const effjay = (rootDirectory) => {
+/**
+* Creates an object out of the file tree passed in. Can optionally write to a
+* json file.
+*
+* @param rootDirectory: The root directory, the json will start from this point
+* @param writeFile: (optional) If you want a json file created.
+* @param filePath: (optional) the filepath for the optional json.
+* @return object representing the file tree.
+*/
+const effjay = (rootDirectory, writeFile = false, filePath = './tree.json') => {
 	const root = fs.readdirSync(rootDirectory);
 
 	if (!root) {
@@ -29,7 +38,13 @@ const effjay = (rootDirectory) => {
 			'you need to pass in a directory path';
 	}
 
-	return generateJSON(root, rootDirectory);
+	const json = generateJSON(root, rootDirectory);
+
+	if (writeFile) {
+		fs.writeFileSync(filePath, JSON.stringify(json));
+	}
+
+	return json;
 }
 
-console.log(effjay('test'));
+module.exports = effjay;
