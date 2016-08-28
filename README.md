@@ -16,13 +16,7 @@ $ npm i effjay
 imagine a file tree that looks like:
 
 
-+testdir
-|
-+--file1.js
-|
-+--+subfolder
-   |
-   +--file2.js
+![]('tree.png')
 
 effjay gives us a json representation of the above structure:
 
