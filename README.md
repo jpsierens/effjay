@@ -22,7 +22,7 @@ effjay gives us a json representation of the above structure:
 
 ```js
 // our converter
-const effjay = require('../index');
+const effjay = require('effjay');
 
 // this will do 2 things:
 // 1. Create the json (tree.json) out of the 'testdir' directory.
