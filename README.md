@@ -16,7 +16,7 @@ $ npm i effjay
 imagine a file tree that looks like:
 
 
-![]('tree.png')
+![](https://github.com/jpsierens/effjay/blob/master/tree.png)
 
 effjay gives us a json representation of the above structure:
 
@@ -36,7 +36,7 @@ console.log(tree); // logs {"file1.js":"hola","subfolder":{"file2.js":"wassup"}}
 ## API
 
 effjay:
-* @param rootDirectory: The root directory, the json will start from this point
-* @param writeFile: (optional) If you want a json file created.
-* @param filePath: (optional) the filepath for the optional json.
+* @param rootDirectory: String, The root directory, the json will start from this point
+* @param writeFile: (optional) Boolean, If you want a json file created.
+* @param filePath: (optional) String, the filepath for the optional json.
 * @return object representing the file tree.
