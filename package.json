@@ -4,7 +4,7 @@
   "description": "generate json from a file tree",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -20,5 +20,9 @@
   "bugs": {
     "url": "https://github.com/jpsierens/effjay/issues"
   },
-  "homepage": "https://github.com/jpsierens/effjay#readme"
+  "homepage": "https://github.com/jpsierens/effjay#readme",
+  "dependencies": {
+    "expect": "^1.20.2",
+    "mocha": "^3.1.2"
+  }
 }

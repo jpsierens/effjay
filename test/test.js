@@ -1,9 +1,25 @@
-// our converter
 const effjay = require('../index');
+const expect = require('expect');
 
-// this will do 2 things:
-// 1. Create the json (tree.json) out of the 'testdir' directory.
-// 2. assign the object representation 'testdir' to the const tree.
-const tree = effjay('testdir', true);
+describe('effjay', function() {
+    const representation = { 
+        'file1.txt': 'hola', 
+        subfolder: { 
+            'file2.txt': 'wassup' 
+        } 
+    };
 
-console.log(tree);
+    it('should create a JSON representing the file tree given', function() {
+        effjay('test/testdir', true);
+        const treeJSON = require('./tree.json');
+
+        expect(treeJSON).toEqual(representation);
+    });
+
+    it('should store the JSON representation when given a variable', function() {
+        const storedRep = effjay('test/testdir', false);
+        
+        expect(storedRep).toEqual(representation);
+    });
+    
+});
