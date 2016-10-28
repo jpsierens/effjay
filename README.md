@@ -7,7 +7,7 @@
 ## Install
 
 ```
-$ npm i effjay
+$ npm i --save effjay
 ```
 
 
