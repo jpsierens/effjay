@@ -10,14 +10,16 @@ describe('effjay', function() {
     };
 
     it('should create a JSON representing the file tree given', function() {
-        effjay('test/testdir', true);
+        const jsonPath = './test/tree.json';
+        
+        effjay('./test/testdir', true, jsonPath);
         const treeJSON = require('./tree.json');
 
         expect(treeJSON).toEqual(representation);
     });
 
     it('should store the JSON representation when given a variable', function() {
-        const storedRep = effjay('test/testdir', false);
+        const storedRep = effjay('./test/testdir', false);
         
         expect(storedRep).toEqual(representation);
     });

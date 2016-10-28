@@ -38,4 +38,4 @@ jspm_packages
 
 jsconfig.json
 typings
-tree.json
+test/tree.json
