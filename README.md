@@ -1,4 +1,4 @@
-# effjay
+# effjay ![build status](https://travis-ci.org/jpsierens/effjay.svg?branch=master)
 
 > Convert a file tree to json
 
